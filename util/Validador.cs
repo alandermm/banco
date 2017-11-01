@@ -1,9 +1,9 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Validacao{
+namespace util{
     
-    public class Validacao{
+    public class Validador{
         private string doc {get; set;}
         private string primeiroDigito {get; set;}
         private string segundoDigito {get; set;}

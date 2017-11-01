@@ -1,17 +1,10 @@
-﻿using System;
-using dados;
-namespace terminal
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Conta conta = new Conta();
-            conta.Depositar(250);
-            Console.WriteLine(conta.MeuSaldo());
+using System;
 
-            Console.WriteLine(conta.saldo);
-            Console.
+namespace dados{
+    class Program{
+        static void Main(string[] args){
+            Menu inicio = new Menu();
+            inicio.mostrarMenuPrincipal();
         }
     }
 }

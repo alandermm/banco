@@ -50,6 +50,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "util/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/util.dll": {}
+        }
       }
     }
   },
@@ -230,12 +240,18 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "util/1.0.0": {
+      "type": "project",
+      "path": "../util/util.csproj",
+      "msbuildProject": "../util/util.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.0",
-      "NetOffice.Excel >= 1.7.4-pre-jun-28-2015"
+      "NetOffice.Excel >= 1.7.4-pre-jun-28-2015",
+      "util >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -245,11 +261,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\dados\\dados.csproj",
+      "projectUniqueName": "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\dados\\dados.csproj",
       "projectName": "dados",
-      "projectPath": "c:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\dados\\dados.csproj",
+      "projectPath": "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\dados\\dados.csproj",
       "packagesPath": "C:\\Users\\01317235614\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\dados\\obj\\",
+      "outputPath": "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\dados\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -265,7 +281,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\util\\util.csproj": {
+              "projectPath": "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\util\\util.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
