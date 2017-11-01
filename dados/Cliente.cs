@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections;
 using NetOffice.ExcelApi;
 using util;
 namespace dados
@@ -39,18 +40,85 @@ namespace dados
             }
             ex.Workbooks.Open(arquivo);
             int ultimaLinha = getUltimaLinha(arquivo);
-            ex.Cells[ultimaLinha, 1].Value = ultimaLinha + 1;
+            ex.Cells[ultimaLinha, 1].Value = this.documento;
             ex.Cells[ultimaLinha, 2].Value = this.nome;
             ex.Cells[ultimaLinha, 3].Value = this.email;
-            ex.Cells[ultimaLinha, 4].Value = this.documento;
-            ex.Cells[ultimaLinha, 5].Value = this.endereco.rua;
-            ex.Cells[ultimaLinha, 6].Value = this.endereco.numero;
-            ex.Cells[ultimaLinha, 7].Value = this.endereco.bairro;
-            ex.Cells[ultimaLinha, 8].Value = DateTime.Now;
+            ex.Cells[ultimaLinha, 4].Value = this.endereco.rua;
+            ex.Cells[ultimaLinha, 5].Value = this.endereco.numero;
+            ex.Cells[ultimaLinha, 6].Value = this.endereco.bairro;
+            ex.Cells[ultimaLinha, 7].Value = DateTime.Now;
             ex.ActiveWorkbook.Save();
             ex.Quit();
             ex.Dispose();
         }
+
+        public Cliente carregarObjeto(int doc, String arquivo){
+        Application ex = new Application();
+        ex.Workbooks.Open(arquivo);
+        Cliente cliente = new Cliente();
+        int linha = 2;
+        int campo = 1;
+        while(!ex.Cells[linha, 1].Value.ToString().Contains(doc.ToString())){
+            linha++;
+        }
+        foreach(var propriedade in doc.GetType().GetProperties()){
+            if(propriedade.PropertyType.IsClass &&  !propriedade.PropertyType.Name.Equals("String")) {
+                foreach(var subPropriedade in propriedade.GetType().GetProperties()){
+                    subPropriedade.SetValue(doc, ex.Cells[linha, campo].Value);
+                    campo++;
+                }
+            } else {
+                propriedade.SetValue(doc, ex.Cells[linha, campo].Value);
+                campo++;
+            }
+        }
+        return cliente;
+    }
+
+    public ArrayList buscarCliente(String arquivo, String doc ){
+        if(File.Exists(arquivo)){
+            ArrayList codigos = new ArrayList();
+            Application ex = new Application();
+            ex.Workbooks.Open(arquivo);
+            int numCampo = 1;
+            String cabecalho = null, resultado = null;
+            int linha = 0;
+            do{
+                linha++;
+                if(ex.Cells[linha, numCampo].Value.ToString().Equals(doc)){
+                    numCampo = 1;
+                    while(!ex.Cells[linha, numCampo].Value.Equals(null)){
+                        if(numCampo == 1){
+                            codigos.Add(ex.Cells[linha, numCampo].Value);
+                        } 
+                        resultado += ex.Cells[linha, numCampo].Value.ToString() + " | ";
+                        numCampo++;
+                    }
+                    if(!resultado.Equals(null)){
+                        resultado += "\n";
+                    }
+                }
+            } while (ex.Cells[linha,1].Value != null);
+            if(!resultado.Equals(null)){
+                numCampo = 1;
+                while(!ex.Cells[linha, numCampo].Value.Equals(null)){
+                    cabecalho += ex.Cells[1, numCampo].Value.ToString() + " | ";
+                    numCampo++;
+                }
+                Console.WriteLine("Resultado(s) encontrado(s): ");
+                Console.WriteLine(cabecalho);
+                Console.WriteLine(resultado);
+                return codigos;
+            } else {
+                Console.WriteLine("O termo buscado não foi encontrado");
+                return null;
+            } 
+            ex.Quit();
+        } else {
+            Console.WriteLine("O arquivo " + arquivo + " não foi encontrado!");
+            return null;
+        }
+    }
 
         private void gerarCabecalho(String arquivo){
             Application ex = new Application();
@@ -61,14 +129,13 @@ namespace dados
                 ex.Workbooks.Open(arquivo);
             }
             if(!File.Exists(arquivo) || getUltimaLinha(arquivo) == 1){
-                ex.Cells[1, 1].Value = "Cód Cliente";
+                ex.Cells[1, 1].Value = "Documento";
                 ex.Cells[1, 2].Value = "Nome";
                 ex.Cells[1, 3].Value = "E-mail";
-                ex.Cells[1, 4].Value = "Documento";
-                ex.Cells[1, 5].Value = "Rua";
-                ex.Cells[1, 6].Value = "Número";
-                ex.Cells[1, 7].Value = "Bairro";
-                ex.Cells[1, 8].Value = "Data";
+                ex.Cells[1, 4].Value = "Rua";
+                ex.Cells[1, 5].Value = "Número";
+                ex.Cells[1, 6].Value = "Bairro";
+                ex.Cells[1, 7].Value = "Data";
             }
             if(existeArquivo){
                 ex.ActiveWorkbook.Save();
