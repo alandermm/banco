@@ -1,0 +1,12 @@
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\obj\Debug\netcoreapp2.0\terminal.csproj.CoreCompileInputs.cache
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\obj\Debug\netcoreapp2.0\terminal.AssemblyInfoInputs.cache
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\obj\Debug\netcoreapp2.0\terminal.AssemblyInfo.cs
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\terminal.deps.json
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\terminal.runtimeconfig.json
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\terminal.runtimeconfig.dev.json
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\terminal.dll
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\terminal.pdb
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\dados.dll
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\dados.pdb
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\obj\Debug\netcoreapp2.0\terminal.dll
+C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\obj\Debug\netcoreapp2.0\terminal.pdb
