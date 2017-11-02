@@ -1,22 +1,48 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "signature": "10cd16a83b2517dd675f31c618a6b6e7f76bc27e"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "terminal/1.0.0": {
         "dependencies": {
-          "dados": "1.0.0"
+          "NetOffice.Excel": "1.7.4-pre-jun-28-2015",
+          "dados": "1.0.0",
+          "util": "1.0.0"
         },
         "runtime": {
           "terminal.dll": {}
         }
       },
+      "NetOffice.Core/1.7.4-pre-jun-28-2015": {
+        "runtime": {
+          "lib/net45/NetOffice.dll": {},
+          "lib/net45/OfficeApi.dll": {},
+          "lib/net45/VBIDEApi.dll": {}
+        }
+      },
+      "NetOffice.Excel/1.7.4-pre-jun-28-2015": {
+        "dependencies": {
+          "NetOffice.Core": "1.7.4-pre-jun-28-2015"
+        },
+        "runtime": {
+          "lib/net45/ExcelApi.dll": {}
+        }
+      },
       "dados/1.0.0": {
+        "dependencies": {
+          "NetOffice.Excel": "1.7.4-pre-jun-28-2015",
+          "util": "1.0.0"
+        },
         "runtime": {
           "dados.dll": {}
+        }
+      },
+      "util/1.0.0": {
+        "runtime": {
+          "util.dll": {}
         }
       }
     }
@@ -27,7 +53,26 @@
       "serviceable": false,
       "sha512": ""
     },
+    "NetOffice.Core/1.7.4-pre-jun-28-2015": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9RsJK36gMoFvRwDzTaNbNmpRyZfOFNyOfjrh1BZsNfqsW9+Z1vPgATD4PAuzd1XyXeFqDaey5LLqIAj474GxHQ==",
+      "path": "netoffice.core/1.7.4-pre-jun-28-2015",
+      "hashPath": "netoffice.core.1.7.4-pre-jun-28-2015.nupkg.sha512"
+    },
+    "NetOffice.Excel/1.7.4-pre-jun-28-2015": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tBl25UGJ/WJquFSEPCzvEKJ3yOUCAXoA1/c9/AbvmkHkoyP7Zns7YZcpYL/RM8F0zm50wg/SL86rplzgbigA1w==",
+      "path": "netoffice.excel/1.7.4-pre-jun-28-2015",
+      "hashPath": "netoffice.excel.1.7.4-pre-jun-28-2015.nupkg.sha512"
+    },
     "dados/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "util/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

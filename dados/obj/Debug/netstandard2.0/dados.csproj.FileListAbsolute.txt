@@ -6,3 +6,13 @@ C:\Users\01317235614\Desktop\Orientacao\Banco\dados\obj\Debug\netstandard2.0\dad
 C:\Users\01317235614\Desktop\Orientacao\Banco\dados\obj\Debug\netstandard2.0\dados.AssemblyInfo.cs
 C:\Users\01317235614\Desktop\Orientacao\Banco\dados\obj\Debug\netstandard2.0\dados.dll
 C:\Users\01317235614\Desktop\Orientacao\Banco\dados\obj\Debug\netstandard2.0\dados.pdb
+C:\Users\alander\CodeXP\banco\dados\bin\Debug\netstandard2.0\dados.deps.json
+C:\Users\alander\CodeXP\banco\dados\bin\Debug\netstandard2.0\dados.dll
+C:\Users\alander\CodeXP\banco\dados\bin\Debug\netstandard2.0\dados.pdb
+C:\Users\alander\CodeXP\banco\dados\bin\Debug\netstandard2.0\util.dll
+C:\Users\alander\CodeXP\banco\dados\bin\Debug\netstandard2.0\util.pdb
+C:\Users\alander\CodeXP\banco\dados\obj\Debug\netstandard2.0\dados.csproj.CoreCompileInputs.cache
+C:\Users\alander\CodeXP\banco\dados\obj\Debug\netstandard2.0\dados.AssemblyInfoInputs.cache
+C:\Users\alander\CodeXP\banco\dados\obj\Debug\netstandard2.0\dados.AssemblyInfo.cs
+C:\Users\alander\CodeXP\banco\dados\obj\Debug\netstandard2.0\dados.dll
+C:\Users\alander\CodeXP\banco\dados\obj\Debug\netstandard2.0\dados.pdb

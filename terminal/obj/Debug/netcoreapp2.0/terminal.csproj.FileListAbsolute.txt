@@ -10,3 +10,17 @@ C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\d
 C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\bin\Debug\netcoreapp2.0\dados.pdb
 C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\obj\Debug\netcoreapp2.0\terminal.dll
 C:\Users\01317235614\Desktop\Orientacao\Banco\terminal\obj\Debug\netcoreapp2.0\terminal.pdb
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\terminal.deps.json
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\terminal.runtimeconfig.json
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\terminal.runtimeconfig.dev.json
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\terminal.dll
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\terminal.pdb
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\dados.dll
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\util.dll
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\dados.pdb
+C:\Users\alander\CodeXP\banco\terminal\bin\Debug\netcoreapp2.0\util.pdb
+C:\Users\alander\CodeXP\banco\terminal\obj\Debug\netcoreapp2.0\terminal.csproj.CoreCompileInputs.cache
+C:\Users\alander\CodeXP\banco\terminal\obj\Debug\netcoreapp2.0\terminal.AssemblyInfoInputs.cache
+C:\Users\alander\CodeXP\banco\terminal\obj\Debug\netcoreapp2.0\terminal.AssemblyInfo.cs
+C:\Users\alander\CodeXP\banco\terminal\obj\Debug\netcoreapp2.0\terminal.dll
+C:\Users\alander\CodeXP\banco\terminal\obj\Debug\netcoreapp2.0\terminal.pdb

@@ -3,17 +3,30 @@ using System.Text.RegularExpressions;
 
 namespace util{
     
+    /// <summary>
+    /// Classe Validador - Utilizada para validar documentos
+    /// </summary>
     public class Validador{
         private string doc {get; set;}
         private string primeiroDigito {get; set;}
         private string segundoDigito {get; set;}
         private bool valido {get; set;} = false;
         
+        /// <summary>
+        /// Método para limpar a entada de dados, restando apenas os números do documento
+        /// </summary>
+        /// <param name="doc">String com o número do documento</param>
+        /// <returns></returns>
         private string limparCaracteresDocumento(string doc){
             return doc.Trim().Replace("/","").Replace("-","").Replace(".","");
         }
 
-        private string validarDigito(int[] chave = null){
+        /// <summary>
+        /// Método validador do dígito do documento
+        /// </summary>
+        /// <param name="chave">Chave utilizada para validação do documento</param>
+        /// <returns>Retorna o dígito</returns>
+        private string validarDigito(int[] chave){
             string tempdoc;
             int soma = 0, resto = 0;
             tempdoc = this.doc.Substring(0, chave.Length);
@@ -28,6 +41,10 @@ namespace util{
             } 
         }
 
+        /// <summary>
+        /// Método para solicitar o CPF
+        /// </summary>
+        /// <returns>Retorna o CPF solicitado</returns>
         public string pedirCPF(){
             do{
                 this.doc = limparCaracteresDocumento(Console.ReadLine());
@@ -36,6 +53,10 @@ namespace util{
             return this.doc;
         }
 
+        /// <summary>
+        /// Método para validar CPF
+        /// </summary>
+        /// <returns>Retorna true se o CPF for válido ou false para inválido</returns>
         private bool validarCPF(){
             Regex rgx = new Regex(@"^\d*$");
             int[] chaveCPF = {10,9,8,7,6,5,4,3,2};
@@ -59,6 +80,10 @@ namespace util{
             }
         }
 
+        /// <summary>
+        /// Método para solicitar o CNPJ
+        /// </summary>
+        /// <returns>Retorna o CNPJ solicitado</returns>
         public string pedirCNPJ(){
             do{
                 this.doc = limparCaracteresDocumento(Console.ReadLine());
@@ -67,6 +92,10 @@ namespace util{
             return this.doc;
         }
 
+        /// <summary>
+        /// Método para validar CNPJ
+        /// </summary>
+        /// <returns>Retorna true se o CNPJ for válido ou false para inválido</returns>
         private bool validarCNPJ(){
             Regex rgx = new Regex(@"^\d*$");
             int[] chaveCNPJ = {5,4,3,2,9,8,7,6,5,4,3,2};

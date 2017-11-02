@@ -177,23 +177,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\01317235614\\.nuget\\packages\\": {},
+    "C:\\Users\\alander\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\util\\util.csproj",
+      "projectUniqueName": "C:\\Users\\alander\\CodeXP\\banco\\util\\util.csproj",
       "projectName": "util",
-      "projectPath": "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\util\\util.csproj",
-      "packagesPath": "C:\\Users\\01317235614\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\01317235614\\Desktop\\Orientacao\\banco\\util\\obj\\",
+      "projectPath": "C:\\Users\\alander\\CodeXP\\banco\\util\\util.csproj",
+      "packagesPath": "C:\\Users\\alander\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alander\\CodeXP\\banco\\util\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\01317235614\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\alander\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"

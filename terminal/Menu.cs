@@ -2,7 +2,14 @@ using System;
 using System.IO;
 using dados;
 namespace dados{
+    /// <summary>
+    /// Classe Menu - contém os menus do programa
+    /// </summary>
     public class Menu{
+
+        /// <summary>
+        /// Método para mostrar o menu principal
+        /// </summary>
         public void mostrarMenuPrincipal(){
             string path = Directory.GetCurrentDirectory();
             int opt;
@@ -33,6 +40,11 @@ namespace dados{
                 }
             } while(opt != 0);
         }
+
+        /// <summary>
+        /// Método para mostrar o menu de escolha do tipo de cliente, CPF ou CNPJ
+        /// </summary>
+        /// <returns>Retorna string com o valor "CPF" ou "CNPJ", dependendo da escolha</returns>
         private string mostrarMenuTipoCliente(){
             string tipoDoc;
             Console.WriteLine("Escolha o tipo do cliente:\n"

@@ -5,6 +5,9 @@ using NetOffice.ExcelApi;
 using util;
 namespace dados
 {
+    /// <summary>
+    /// Classe Cliente
+    /// </summary>    
     public class Cliente{
         public string documento {get; set;}
         public string nome {get; set;}
@@ -12,10 +15,10 @@ namespace dados
         public string email {get; set;}
         public Endereco endereco {get; set;}
 
-/// <summary>
-/// 
-/// </summary>
-/// <param name="tipoDoc"></param>
+        /// <summary>
+        /// Iniciar dados do Cliente
+        /// </summary>
+        /// <param name="tipoDoc">Esperado tipo do Documento  = CPF ou CNPJ</param>
         public void iniciarDados(String tipoDoc){
             Console.Write("Nome do Cliente: ");
             this.nome = Console.ReadLine();
@@ -33,6 +36,10 @@ namespace dados
             this.endereco.bairro = Console.ReadLine();
         }
 
+        /// <summary>
+        /// Salva os dados do clinete no arquivo excel especificado
+        /// </summary>
+        /// <param name="arquivo">Path + nome do arquivo .xlsx</param>
         public void salvar(String arquivo){
             Application ex = new Application();
             if(!File.Exists(arquivo) || getUltimaLinha(arquivo) == 1){
@@ -52,6 +59,12 @@ namespace dados
             ex.Dispose();
         }
 
+        /// <summary>
+        /// Carrega e retorna os dados do cliente
+        /// </summary>
+        /// <param name="doc">número do documento para identificar o cliente</param>
+        /// <param name="arquivo">arquivo excel de cadastro dos clientes</param>
+        /// <returns>retorna o objeto cliente</returns>
         public Cliente carregarObjeto(int doc, String arquivo){
         Application ex = new Application();
         ex.Workbooks.Open(arquivo);
@@ -75,6 +88,12 @@ namespace dados
         return cliente;
     }
 
+    /// <summary>
+    /// Buscar cliente
+    /// </summary>
+    /// <param name="arquivo">arquivo excel de cadastro dos clientes</param>
+    /// <param name="doc">número do documento para identificar o cliente convertido em String</param>
+    /// <returns>Retorna Array com os dados do cliente</returns>
     public ArrayList buscarCliente(String arquivo, String doc ){
         if(File.Exists(arquivo)){
             ArrayList codigos = new ArrayList();
@@ -120,6 +139,10 @@ namespace dados
         }
     }
 
+        /// <summary>
+        /// Gera o cabeçalho no arquivo de cadastro
+        /// </summary>
+        /// <param name="arquivo">Path + nome do arquivo .xlsx utilizado no cadstro</param>
         private void gerarCabecalho(String arquivo){
             Application ex = new Application();
             bool existeArquivo = File.Exists(arquivo);
@@ -146,6 +169,11 @@ namespace dados
             ex.Dispose();
         }
 
+        /// <summary>
+        /// Retorna a ultima linha em branco do arquivo de cadastro
+        /// </summary>
+        /// <param name="arquivo">Path + nome do arquivo .xlsx utilizado no cadstro</param>
+        /// <returns>número da ultima linha em branco</returns>
         private static int getUltimaLinha(String arquivo){
             int contador = 0;
             Application ex = new Application();
