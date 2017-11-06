@@ -37,11 +37,10 @@ namespace dados{
             ex.Cells[ultimaLinha, 5].Value = this.endereco.numero;
             ex.Cells[ultimaLinha, 6].Value = this.endereco.bairro;
             ex.Cells[ultimaLinha, 7].Value = DateTime.Now;
-            ex.;
             ex.ActiveWorkbook.Save();
-            
+            ex.ActiveWorkbook.Close();
             ex.Quit();
-            //ex.Dispose();
+            ex.Dispose();
         }
 
         /// <summary>
@@ -62,10 +61,13 @@ namespace dados{
             cliente.documento = ex.Cells[linha, 1].Value.ToString();
             cliente.nome = ex.Cells[linha, 2].Value.ToString();
             cliente.email = ex.Cells[linha, 3].Value.ToString();
+            cliente.endereco = new Endereco();
             cliente.endereco.Rua = ex.Cells[linha, 4].Value.ToString();
             cliente.endereco.Numero = Int16.Parse(ex.Cells[linha, 5].Value.ToString());
             cliente.endereco.Bairro = ex.Cells[linha, 6].Value.ToString(); 
-            
+            ex.ActiveWorkbook.Close();
+            ex.Quit();
+            ex.Dispose();
             return cliente;
         }
 

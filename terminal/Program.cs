@@ -95,7 +95,9 @@ namespace dados{
                 while(ex.Cells[linha,1].Value != null && !ex.Cells[linha,2].Value.ToString().Equals(documento)){
                     linha++;
                 }
+                ex.ActiveWorkbook.Close();
                 ex.Quit();
+                ex.Dispose();
                 if(linha == ultimaLinha ){
                     conta.Numero = ultimaLinha;
                     conta.Saldo = 0;

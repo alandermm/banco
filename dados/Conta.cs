@@ -28,9 +28,11 @@ namespace dados
             ex.Cells[ultimaLinha, 4].Value = this.saldo;
             ex.Cells[ultimaLinha, 5].Value = DateTime.Now;
             //ex.Cells.AutoFit();
+            
             ex.ActiveWorkbook.Save();
+            ex.ActiveWorkbook.Close();
             ex.Quit();
-            //ex.Dispose();
+            ex.Dispose();
         }
 
         /*private void gerarCabecalho(String arquivo){
