@@ -39,6 +39,9 @@
         }
       },
       "util/1.0.0": {
+        "dependencies": {
+          "NetOffice.Excel": "1.7.4-pre-jun-28-2015"
+        },
         "runtime": {
           "util.dll": {}
         }

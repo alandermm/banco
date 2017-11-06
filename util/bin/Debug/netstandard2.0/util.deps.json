@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "d5ef1509ab9594c5ee7350d5e7860d93d6b54c43"
+    "signature": "c5cab7f1f4a55a416c534568ee980b7c743bf48a"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,13 +9,29 @@
     ".NETStandard,Version=v2.0/": {
       "util/1.0.0": {
         "dependencies": {
-          "NETStandard.Library": "2.0.0"
+          "NETStandard.Library": "2.0.0",
+          "NetOffice.Excel": "1.7.4-pre-jun-28-2015"
         },
         "runtime": {
           "util.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NetOffice.Core/1.7.4-pre-jun-28-2015": {
+        "runtime": {
+          "lib/net45/NetOffice.dll": {},
+          "lib/net45/OfficeApi.dll": {},
+          "lib/net45/VBIDEApi.dll": {}
+        }
+      },
+      "NetOffice.Excel/1.7.4-pre-jun-28-2015": {
+        "dependencies": {
+          "NetOffice.Core": "1.7.4-pre-jun-28-2015"
+        },
+        "runtime": {
+          "lib/net45/ExcelApi.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -35,6 +51,20 @@
       "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NetOffice.Core/1.7.4-pre-jun-28-2015": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9RsJK36gMoFvRwDzTaNbNmpRyZfOFNyOfjrh1BZsNfqsW9+Z1vPgATD4PAuzd1XyXeFqDaey5LLqIAj474GxHQ==",
+      "path": "netoffice.core/1.7.4-pre-jun-28-2015",
+      "hashPath": "netoffice.core.1.7.4-pre-jun-28-2015.nupkg.sha512"
+    },
+    "NetOffice.Excel/1.7.4-pre-jun-28-2015": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tBl25UGJ/WJquFSEPCzvEKJ3yOUCAXoA1/c9/AbvmkHkoyP7Zns7YZcpYL/RM8F0zm50wg/SL86rplzgbigA1w==",
+      "path": "netoffice.excel/1.7.4-pre-jun-28-2015",
+      "hashPath": "netoffice.excel.1.7.4-pre-jun-28-2015.nupkg.sha512"
     },
     "NETStandard.Library/2.0.0": {
       "type": "package",

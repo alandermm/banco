@@ -239,6 +239,9 @@
       "util/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "NetOffice.Excel": "1.7.4-pre-jun-28-2015"
+        },
         "compile": {
           "bin/placeholder/util.dll": {}
         },

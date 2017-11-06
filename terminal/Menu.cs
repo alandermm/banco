@@ -10,13 +10,12 @@ namespace dados{
         /// <summary>
         /// Método para mostrar o menu principal
         /// </summary>
-        public void mostrarMenuPrincipal(){
-            string path = Directory.GetCurrentDirectory();
+        public int mostrarMenuPrincipal(){
             int opt;
-            do {
+            //do {
                 Console.WriteLine("Escola uma das opções abaixo\n"
-                        + "1 - Cadastrar Cliente\n"
-                        + @"2 - Depositar\Sacar\n"
+                        + "1 - Abrir Conta\n"
+                        + "2 - Depositar\\Sacar\n"
                         + "3 - Obter Saldo\n"
                         + "4 - Sair\n"
                 );
@@ -25,27 +24,15 @@ namespace dados{
                 do{
                     opt = Int16.Parse(Console.ReadLine());
                 } while (opt < 1 || opt > 4);
-                switch(opt){
-                    case 1: 
-                            Cliente cliente = new Cliente();
-                            string tipoDoc = mostrarMenuTipoCliente();
-                            cliente.iniciarDados(tipoDoc);
-                            string arquivo;
-                            arquivo = tipoDoc == "CPF" ? arquivo = "PessoasFisicas.xlsx" : arquivo = "PessoasJuridicas.xlsx";
-                            cliente.salvar( path + arquivo);
-                            break;
-                    /*case 2: 
-                            break;
-                    case 3: venderCarro(); break;*/
-                }
-            } while(opt != 0);
+                return opt;
+            //} while(opt != 0);
         }
 
         /// <summary>
         /// Método para mostrar o menu de escolha do tipo de cliente, CPF ou CNPJ
         /// </summary>
         /// <returns>Retorna string com o valor "CPF" ou "CNPJ", dependendo da escolha</returns>
-        private string mostrarMenuTipoCliente(){
+        public string mostrarMenuTipoCliente(){
             string tipoDoc;
             Console.WriteLine("Escolha o tipo do cliente:\n"
                         + "1 - Pessoa Física\n"

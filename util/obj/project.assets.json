@@ -11,6 +11,31 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "NetOffice.Core/1.7.4-pre-jun-28-2015": {
+        "type": "package",
+        "compile": {
+          "lib/net45/NetOffice.dll": {},
+          "lib/net45/OfficeApi.dll": {},
+          "lib/net45/VBIDEApi.dll": {}
+        },
+        "runtime": {
+          "lib/net45/NetOffice.dll": {},
+          "lib/net45/OfficeApi.dll": {},
+          "lib/net45/VBIDEApi.dll": {}
+        }
+      },
+      "NetOffice.Excel/1.7.4-pre-jun-28-2015": {
+        "type": "package",
+        "dependencies": {
+          "NetOffice.Core": "1.7.4-pre-jun-28-2015"
+        },
+        "compile": {
+          "lib/net45/ExcelApi.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ExcelApi.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -40,6 +65,42 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
+      ]
+    },
+    "NetOffice.Core/1.7.4-pre-jun-28-2015": {
+      "sha512": "9RsJK36gMoFvRwDzTaNbNmpRyZfOFNyOfjrh1BZsNfqsW9+Z1vPgATD4PAuzd1XyXeFqDaey5LLqIAj474GxHQ==",
+      "type": "package",
+      "path": "netoffice.core/1.7.4-pre-jun-28-2015",
+      "files": [
+        "lib/net40/NetOffice.dll",
+        "lib/net40/NetOffice.xml",
+        "lib/net40/OfficeApi.dll",
+        "lib/net40/OfficeApi.xml",
+        "lib/net40/VBIDEApi.dll",
+        "lib/net40/VBIDEApi.xml",
+        "lib/net45/NetOffice.dll",
+        "lib/net45/NetOffice.xml",
+        "lib/net45/OfficeApi.dll",
+        "lib/net45/OfficeApi.xml",
+        "lib/net45/VBIDEApi.dll",
+        "lib/net45/VBIDEApi.xml",
+        "netoffice.core.1.7.4-pre-jun-28-2015.nupkg.sha512",
+        "netoffice.core.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "NetOffice.Excel/1.7.4-pre-jun-28-2015": {
+      "sha512": "tBl25UGJ/WJquFSEPCzvEKJ3yOUCAXoA1/c9/AbvmkHkoyP7Zns7YZcpYL/RM8F0zm50wg/SL86rplzgbigA1w==",
+      "type": "package",
+      "path": "netoffice.excel/1.7.4-pre-jun-28-2015",
+      "files": [
+        "lib/net40/ExcelApi.dll",
+        "lib/net40/ExcelApi.xml",
+        "lib/net45/ExcelApi.dll",
+        "lib/net45/ExcelApi.xml",
+        "netoffice.excel.1.7.4-pre-jun-28-2015.nupkg.sha512",
+        "netoffice.excel.nuspec",
+        "tools/install.ps1"
       ]
     },
     "NETStandard.Library/2.0.0": {
@@ -173,7 +234,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.0"
+      "NETStandard.Library >= 2.0.0",
+      "NetOffice.Excel >= 1.7.4-pre-jun-28-2015"
     ]
   },
   "packageFolders": {
@@ -220,6 +282,10 @@
             "target": "Package",
             "version": "2.0.0",
             "autoReferenced": true
+          },
+          "NetOffice.Excel": {
+            "target": "Package",
+            "version": "1.7.4-pre-jun-28-2015"
           }
         },
         "imports": [
@@ -229,5 +295,27 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NetOffice.Core 1.7.4-pre-jun-28-2015' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NetOffice.Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NetOffice.Excel 1.7.4-pre-jun-28-2015' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NetOffice.Excel",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
