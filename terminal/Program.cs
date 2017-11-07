@@ -18,6 +18,9 @@ namespace dados{
             decisaoMenuPrincipal();
         }
 
+        /// <summary>
+        /// Método para decisão do menu principal do programa
+        /// </summary>
         private static void decisaoMenuPrincipal(){
             Menu programa = new Menu();
             string path = Directory.GetCurrentDirectory() + "\\";
@@ -59,6 +62,10 @@ namespace dados{
             return cliente;
         }
 
+        /// <summary>
+        /// Método para iniciar os dados do Endereço do Cliente
+        /// </summary>
+        /// <returns>Retorna o objeto endereco</returns>
         public static Endereco iniciarEndereco(){
             Endereco endereco = new Endereco();
             Console.Write("Rua: ");
@@ -70,6 +77,11 @@ namespace dados{
             return endereco;
         }
 
+        /// <summary>
+        /// Método para Abrir uma conta
+        /// </summary>
+        /// <param name="tipoDoc">"CPF" para Pessoas Físicas e "CNPJ" para Pessoas Jurídicas</param>
+        /// <returns>Retorna o Objeto conta</returns>
         public static Conta AbrirConta(String tipoDoc){
             string path = Directory.GetCurrentDirectory() + "\\";
             string arquivo = path + "Contas.xlsx";
