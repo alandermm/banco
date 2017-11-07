@@ -47,5 +47,21 @@ namespace dados{
                 return "CNPJ";
             }
         }
+
+        public string mostrarMenuDepositarSacar(){
+            string operacao;
+            Console.WriteLine("Escolha o tipo da operação:\n"
+                        + "1 - Depositar\n"
+                        + "2 - Sacar\n");
+            do{
+                Console.Write("Opção: ");
+                operacao = Console.ReadLine();
+            } while( operacao != "1" && operacao != "2");
+            if (operacao.Equals("1")){
+                return "Depósito";
+            } else {
+                return "Saque";
+            }
+        }
     }
 }
