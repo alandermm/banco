@@ -14,6 +14,10 @@ namespace dados
         public Cliente titular {get; private set;}
         public Cliente Titular {set => titular = value;}
 
+        /// <summary>
+        /// Método para salvar dados da conta
+        /// </summary>
+        /// <param name="arquivo">Path completo do arquivo de cadastro da conta</param>
         public void salvar(String arquivo){
             Application ex = new Application();
             int ultimaLinha = new Arquivo().getUltimaLinha(arquivo);
