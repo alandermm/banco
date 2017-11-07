@@ -16,7 +16,7 @@ namespace dados{
         public String email {get; private set;}
         public String Email {set => email = value;}
         public Endereco endereco {get; private set;}
-        public Endereco Endereco {set => endereco = value;}
+        public Endereco Endereco { get {return endereco;} set {endereco = value;}}
 
         /// <summary>
         /// Salva os dados do clinete no arquivo excel especificado

@@ -43,12 +43,16 @@ namespace dados{
                             arquivoConta = path + "Contas.xlsx";
                             Conta contaCliente = new Conta();
                             string doc = tipoDoc.Equals("CPF") ? new Validador().pedirCPF() : new Validador().pedirCNPJ();
-                            venda.cliente = new Pessoa().carregarPessoa(Int64.Parse(doc) , arquivoCliente);
-                            Console.Write("Digite o valor para " + operacao + ": ");
-                            double valor = double.Parse(Console.ReadLine());
+                            contaCliente.Titular = new Cliente();
+                            contaCliente.Titular = carregarCliente(Int64.Parse(doc) , arquivoCliente);
+                            if(contaCliente.Titular == null){
+                                Console.WriteLine("Cliente não encontrado");
+                            } else {
 
+                                Console.Write("Digite o valor para " + operacao + ": ");
+                                double valor = double.Parse(Console.ReadLine());
 
-
+                            }
                             break;
                     /*case 3: ObterSaldo(); break;*/
                     case 4: Environment.Exit(0); break;
@@ -72,25 +76,76 @@ namespace dados{
             return cliente;
         }
 
-        public Cliente carregarCliente(Int64 doc, String arquivo){
+        public static Conta carregarConta (string arquivo){
+            string path = Directory.GetCurrentDirectory() + "\\";
+            String tipoDoc = new Menu().mostrarMenuTipoCliente();
+            String arquivoCliente = tipoDoc.Equals("CPF")? path + "PessoasFisicas.xlsx" : path + "PessoasJuridicas.xlsx";
+            //String arquivoConta = path + "Contas.xlsx";
+            Conta contaCliente = new Conta();
+            string doc = tipoDoc.Equals("CPF") ? new Validador().pedirCPF() : new Validador().pedirCNPJ();
+            contaCliente.Titular = new Cliente();
+            contaCliente.Titular = carregarCliente(Int64.Parse(doc) , arquivoCliente);
+            if(contaCliente.Titular == null){
+                Console.WriteLine("Cliente não encontrado");
+            } else {                
+                Application ex = new Application();
+                ex.Workbooks.Open(arquivo);
+                Cliente cliente = new Cliente();
+                int linha = 2;
+                while(Int64.Parse(ex.Cells[linha, 2].Value.ToString()) != doc && ex.Cells[linha,1].Value != null ){
+                    linha++;
+                    if(Int64.Parse(ex.Cells[linha, 1].Value.ToString()) == doc){
+                        cliente.Documento = ex.Cells[linha, 1].Value.ToString();
+                        cliente.Nome = ex.Cells[linha, 2].Value.ToString();
+                        cliente.Email = ex.Cells[linha, 3].Value.ToString();
+                        cliente.Endereco = new Endereco();
+                        cliente.Endereco.Rua = ex.Cells[linha, 4].Value.ToString();
+                        cliente.Endereco.Numero = Int16.Parse(ex.Cells[linha, 5].Value.ToString());
+                        cliente.Endereco.Bairro = ex.Cells[linha, 6].Value.ToString();
+                    }
+                }
+                ex.ActiveWorkbook.Close();
+                ex.Quit();
+                ex.Dispose();
+                if(cliente == null){
+                    return null; 
+                } else {
+                    return cliente;
+                }   
+            }
+        }
+
+        /// <summary>
+        /// Carrega e retorna os dados do cliente
+        /// </summary>
+        /// <param name="doc">número do documento para identificar o cliente</param>
+        /// <param name="arquivo">arquivo excel de cadastro dos clientes</param>
+        /// <returns>retorna o objeto cliente</returns>
+        public static Cliente carregarCliente(Int64 doc, String arquivo){
             Application ex = new Application();
             ex.Workbooks.Open(arquivo);
             Cliente cliente = new Cliente();
             int linha = 2;
             while(Int64.Parse(ex.Cells[linha, 1].Value.ToString()) != doc && ex.Cells[linha,1].Value != null ){
                 linha++;
+                if(Int64.Parse(ex.Cells[linha, 1].Value.ToString()) == doc){
+                    cliente.Documento = ex.Cells[linha, 1].Value.ToString();
+                    cliente.Nome = ex.Cells[linha, 2].Value.ToString();
+                    cliente.Email = ex.Cells[linha, 3].Value.ToString();
+                    cliente.Endereco = new Endereco();
+                    cliente.Endereco.Rua = ex.Cells[linha, 4].Value.ToString();
+                    cliente.Endereco.Numero = Int16.Parse(ex.Cells[linha, 5].Value.ToString());
+                    cliente.Endereco.Bairro = ex.Cells[linha, 6].Value.ToString();
+                }
             }
-            cliente.Documento = ex.Cells[linha, 1].Value.ToString();
-            cliente.Nome = ex.Cells[linha, 2].Value.ToString();
-            cliente.Email = ex.Cells[linha, 3].Value.ToString();
-            cliente.Endereco = new Endereco();
-            cliente.Endereco.Rua = ex.Cells[linha, 4].Value.ToString();
-            cliente.Endereco.Numero = Int16.Parse(ex.Cells[linha, 5].Value.ToString());
-            cliente.Endereco.Bairro = ex.Cells[linha, 6].Value.ToString(); 
             ex.ActiveWorkbook.Close();
             ex.Quit();
             ex.Dispose();
-            return cliente;
+            if(cliente == null){
+                return null; 
+            } else {
+                return cliente;
+            }
         }
 
         /// <summary>

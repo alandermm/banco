@@ -12,7 +12,7 @@ namespace dados
         public double saldo {get; private set;}
         public double Saldo {set => saldo = value;}
         public Cliente titular {get; private set;}
-        public Cliente Titular {set => titular = value;}
+        public Cliente Titular {get {return titular;} set {titular = value;}}
 
         /// <summary>
         /// Método para salvar dados da conta
@@ -32,7 +32,6 @@ namespace dados
             ex.Cells[ultimaLinha, 4].Value = this.saldo;
             ex.Cells[ultimaLinha, 5].Value = DateTime.Now;
             //ex.Cells.AutoFit();
-            
             ex.ActiveWorkbook.Save();
             ex.ActiveWorkbook.Close();
             ex.Quit();

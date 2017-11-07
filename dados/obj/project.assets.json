@@ -258,23 +258,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alander\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/home/alander/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alander\\CodeXP\\banco\\dados\\dados.csproj",
+      "projectUniqueName": "/home/alander/codeXP/banco/dados/dados.csproj",
       "projectName": "dados",
-      "projectPath": "C:\\Users\\alander\\CodeXP\\banco\\dados\\dados.csproj",
-      "packagesPath": "C:\\Users\\alander\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alander\\CodeXP\\banco\\dados\\obj\\",
+      "projectPath": "/home/alander/codeXP/banco/dados/dados.csproj",
+      "packagesPath": "/home/alander/.nuget/packages/",
+      "outputPath": "/home/alander/codeXP/banco/dados/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\alander\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/alander/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -285,8 +285,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\alander\\CodeXP\\banco\\util\\util.csproj": {
-              "projectPath": "C:\\Users\\alander\\CodeXP\\banco\\util\\util.csproj"
+            "/home/alander/codeXP/banco/util/util.csproj": {
+              "projectPath": "/home/alander/codeXP/banco/util/util.csproj"
             }
           }
         }
