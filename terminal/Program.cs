@@ -25,23 +25,18 @@ namespace dados{
             do{
                 opt = programa.mostrarMenuPrincipal();
                 switch(opt){
-                    case 1: string tipoDoc = new Menu().mostrarMenuTipoCliente();
-                            Conta conta = AbrirConta(tipoDoc);
+                    case 1: String tipoDoc = new Menu().mostrarMenuTipoCliente();
                             String arquivoCliente = tipoDoc == "CPF" ? path + "PessoasFisicas.xlsx" : path + "PessoasJuridicas.xlsx";
                             String arquivoConta = path + "Contas.xlsx";
-                            int ultimaLinha = new Arquivo().getUltimaLinha(arquivoCliente);
+                            Conta conta = AbrirConta(tipoDoc);
                             if(conta != null){    
-                                if(!File.Exists(arquivoCliente) || ultimaLinha == 1){
-                                    String[] cabecalho = new String[]{"Documento", "Nome", "E-mail", "Rua", "Número", "Bairro", "Data"};
-                                    new Arquivo().gerarCabecalho(arquivoCliente, cabecalho);
-                                }
                                 conta.titular.salvar(arquivoCliente);
                                 conta.salvar(arquivoConta);
                             }
                             break;
-                    /*case 2: 
+                    /*case 2: Depositar/Sacar
                             break;
-                    case 3: venderCarro(); break;*/
+                    case 3: ObterSaldo(); break;*/
                     case 4: Environment.Exit(0); break;
                 }
             } while(opt != 4);
@@ -77,9 +72,14 @@ namespace dados{
 
         public static Conta AbrirConta(String tipoDoc){
             string path = Directory.GetCurrentDirectory() + "\\";
-
             string arquivo = path + "Contas.xlsx";
-            int ultimaLinha = new Arquivo().getUltimaLinha(arquivo);
+            String arquivoCliente = tipoDoc == "CPF" ? path + "PessoasFisicas.xlsx" : path + "PessoasJuridicas.xlsx";
+            int ultimaLinha = new Arquivo().getUltimaLinha(arquivoCliente);
+            if(!File.Exists(arquivoCliente) || ultimaLinha == 1){
+                String[] cabecalho = new String[]{"Documento", "Nome", "E-mail", "Rua", "Número", "Bairro", "Data"};
+                new Arquivo().gerarCabecalho(arquivoCliente, cabecalho);
+            }
+            ultimaLinha = new Arquivo().getUltimaLinha(arquivo);
             if(!File.Exists(arquivo) || ultimaLinha == 1){
                 String[] cabecalho = new String[]{"Conta", "Documento", "Nome", "Saldo", "Data abertura"};
                 new Arquivo().gerarCabecalho(arquivo, cabecalho);
@@ -88,7 +88,7 @@ namespace dados{
             Conta conta = new Conta();
             if(File.Exists(arquivo)){
                 conta.Titular = iniciarCliente(tipoDoc);
-                //ultimaLinha = new Arquivo().getUltimaLinha(arquivo);
+                ultimaLinha = new Arquivo().getUltimaLinha(arquivo);
                 Application ex = new Application();
                 ex.Workbooks.Open(arquivo);
                 string documento = conta.titular.documento;
